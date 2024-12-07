@@ -54,17 +54,27 @@ const MyPostWidget = ({ picturePath }) => {
       formData.append("audioPath", audio.name);
     }
 
-    const response = await fetch(`http://learnhive-server-1.onrender.com/posts`, {
-      method: "POST",
-      headers: { Authorization: `Bearer ${token}` },
-      body: formData,
-    });
-    const posts = await response.json();
-    dispatch(setPosts({ posts }));
-    setImage(null);
-    setVideo(null);
-    setAudio(null);
-    setPost("");
+    try {
+      const response = await fetch(`http://learnhive-server-1.onrender.com/posts`, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}` },
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to post the data. Please try again later.');
+      }
+
+      const posts = await response.json();
+      dispatch(setPosts({ posts }));
+      setImage(null);
+      setVideo(null);
+      setAudio(null);
+      setPost("");
+    } catch (error) {
+      console.error("Error posting:", error);
+      alert("There was a problem posting your content. Please try again later.");
+    }
   };
 
   return (
