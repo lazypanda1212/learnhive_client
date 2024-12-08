@@ -23,7 +23,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
   const patchFriend = async () => {
     const response = await fetch(
-      `http://learnhive-server-1.onrender.com/users/${_id}/${friendId}`,
+      `https://learnhive-server-2.onrender.com/users/${_id}/${friendId}`,
       {
         method: "PATCH",
         headers: {

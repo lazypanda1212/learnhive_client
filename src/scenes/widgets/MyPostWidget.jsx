@@ -55,7 +55,7 @@ const MyPostWidget = ({ picturePath }) => {
     }
 
     try {
-      const response = await fetch(`http://learnhive-server-1.onrender.com/posts`, {
+      const response = await fetch(`https://learnhive-server-2.onrender.com/posts`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: formData,

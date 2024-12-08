@@ -8,7 +8,7 @@ const UserImage = ({ image, size = "60px" }) => {
         width={size}
         height={size}
         alt="user"
-        src={`http://learnhive-server-1.onrender.com/assets/${image}`}
+        src={`https://learnhive-server-2.onrender.com/assets/${image}`}
       />
     </Box>
   );

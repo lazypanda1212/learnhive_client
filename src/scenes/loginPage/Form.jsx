@@ -63,7 +63,7 @@ const Form = () => {
     formData.append("picturePath", values.picture.name);
 
     try {
-      const response = await fetch("https://learnhive-server-1.onrender.com/auth/register", {
+      const response = await fetch("https://learnhive-server-2.onrender.com/auth/register", {
         method: "POST",
         body: formData,
       });
@@ -78,7 +78,7 @@ const Form = () => {
 
   const login = async (values, onSubmitProps) => {
     try {
-      const response = await fetch("https://learnhive-server-1.onrender.com/auth/login", {
+      const response = await fetch("https://learnhive-server-2.onrender.com/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
